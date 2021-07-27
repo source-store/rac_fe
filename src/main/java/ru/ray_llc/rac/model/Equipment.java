@@ -44,26 +44,34 @@ public class Equipment extends AbstractNamedEntity {
   @NotBlank
   @Size(max = 255)
   private String address;
+
   @Column(name = "ip_address", nullable = false)
   @NotBlank
   @Size(max = 255)
   private String ip_address;
+
   @Column(name = "longitude", nullable = false)
   private Double longitude;
+
   @Column(name = "latitude", nullable = false)
   private Double latitude;
+
   @Column(name = "description", nullable = false)
   @NotBlank
   @Size(max = 255)
   private String description;
+
   @Column(name = "state", nullable = false, columnDefinition = "bool default true")
   private boolean state;
+
   @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")
   @NotNull
   @JsonProperty(access = JsonProperty.Access.READ_ONLY)
   private Date registered = new Date();
+
   @Column(name = "enabled", nullable = false, columnDefinition = "bool default true")
   private boolean enabled = true;
+
   @OneToMany(fetch = FetchType.EAGER, mappedBy = "equipment")
 //, cascade = CascadeType.REMOVE, orphanRemoval = true)
 //  @OrderBy("name DESC")
