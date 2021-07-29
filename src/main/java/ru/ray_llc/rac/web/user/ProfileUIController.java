@@ -28,7 +28,7 @@ public class ProfileUIController extends AbstractUserController {
       super.update(userTo, SecurityUtil.authUserId());
       SecurityUtil.get().update(userTo);
       status.setComplete();
-      return "barriers";
+      return "redirect:/barriers";
     }
   }
 

@@ -98,11 +98,8 @@ function failNoty(jqXHR) {
   closeNoty();
   var errorInfo = jqXHR.responseText;
   failedNote = new Noty({
-    text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;"
-        + i18n["common.errorStatus"] + ": " + jqXHR.status +
-        jqXHR.responseText,
-//        "<br>" + errorInfo.detail,
-//        "<br>" + errorInfo.type + "<br>" + errorInfo.detail,
+    text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + i18n["common.errorStatus"] + ": " + jqXHR.status +
+        "<br>" + errorInfo.type + "<br>" + errorInfo.detail,
     type: "error",
     layout: "bottomRight"
   });
@@ -111,14 +108,12 @@ function failNoty(jqXHR) {
 
 function renderEditBtn(data, type, row) {
   if (type === "display") {
-    return "<a onclick='updateRow(" + row.id
-        + ");'><span class='fa fa-pencil'></span></a>";
+    return "<a onclick='updateRow(" + row.id + ");'><span class='fa fa-pencil'></span></a>";
   }
 }
 
 function renderDeleteBtn(data, type, row) {
   if (type === "display") {
-    return "<a onclick='deleteRow(" + row.id
-        + ");'><span class='fa fa-remove'></span></a>";
+    return "<a onclick='deleteRow(" + row.id + ");'><span class='fa fa-remove'></span></a>";
   }
 }

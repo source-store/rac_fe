@@ -22,7 +22,8 @@
             <tr>
                 <th><spring:message code="user.name"/></th>
                 <th><spring:message code="user.email"/></th>
-                <th><spring:message code="user.roles"/></th>
+<%--                <th><spring:message code="user.roles"/></th>--%>
+                <th><spring:message code="user.login"/></th>
                 <th><spring:message code="user.active"/></th>
                 <th><spring:message code="user.registered"/></th>
                 <th></th>

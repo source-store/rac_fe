@@ -18,7 +18,6 @@
                 <form:form class="form-group" modelAttribute="userTo" method="post" action="${register ? 'profile/register' : 'profile'}"
                            charset="utf-8" accept-charset="UTF-8">
                     <rac:inputField labelCode="user.name" name="name"/>
-                    <rac:inputField labelCode="user.login" name="login"/>
                     <rac:inputField labelCode="user.email" name="email"/>
                     <rac:inputField labelCode="user.password" name="password" inputType="password"/>
                     <div class="text-right">

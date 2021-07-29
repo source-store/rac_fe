@@ -12,6 +12,11 @@
                 <sec:authorize access="hasRole('ADMIN')">
                     <a class="btn btn-info mr-1" href="users"><spring:message code="user.title"/></a>
                 </sec:authorize>
+
+                <a class="btn btn-info mr-1" href="addcase"><spring:message code="app.addcase"/></a>
+                <a class="btn btn-info mr-1" href="tracking"><spring:message code="app.tracking"/></a>
+                <%--                <a class="btn btn-lg btn-info mt-2" href="profile/register"><spring:message code="app.register"/> &raquo;</a>--%>
+
                 <a class="btn btn-info mr-1" href="profile">${userTo.name} <spring:message code="app.profile"/></a>
                 <button class="btn btn-primary my-1" type="submit">
                     <span class="fa fa-sign-out"></span>
@@ -29,8 +34,8 @@
                             <span class="fa fa-sign-in"></span>
                         </button>
                     </form:form>
-                    </sec:authorize>
                 </li>
+                </sec:authorize>
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link my-1 ml-2" data-toggle="dropdown">${pageContext.response.locale}</a>
                     <div class="dropdown-menu">
@@ -40,5 +45,6 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>
