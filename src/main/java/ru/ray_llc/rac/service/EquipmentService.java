@@ -24,13 +24,15 @@ public class EquipmentService {
     this.repository = repository;
   }
 
-//  @CacheEvict(value = "equipments", allEntries = true);
   @Transactional
+  @CacheEvict(value = "equipments", allEntries = true)
   public Equipment create(Equipment equipment){
     Assert.notNull(equipment, "Equipment must not be null");
     return repository.save(equipment);
   }
 
+  @Transactional
+  @CacheEvict(value = "equipments", allEntries = true)
   public void delete(int id) {
     checkNotFoundWithId(repository.delete(id), id);
   }

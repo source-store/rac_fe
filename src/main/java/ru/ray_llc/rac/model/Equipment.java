@@ -6,6 +6,7 @@ package ru.ray_llc.rac.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Column;
@@ -23,6 +24,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import ru.ray_llc.rac.View;
 
 @Getter
 @Setter
@@ -62,6 +64,7 @@ public class Equipment extends AbstractNamedEntity {
   private String description;
 
   @Column(name = "state", nullable = false, columnDefinition = "bool default true")
+  @JsonView(View.JsonUI.class)
   private boolean state;
 
   @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")

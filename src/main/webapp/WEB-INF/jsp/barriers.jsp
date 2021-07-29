@@ -17,11 +17,11 @@
             <div class="card-body pb-0">
                 <form id="filter">
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-md-2">
                             <label for="ip_address"><spring:message code="barriers.ip_address"/></label>
                             <input class="form-control" name="ip_address" id="ip_address" autocomplete="off">
                         </div>
-                        <div class="col-2">
+                        <div class="col-md-7">
                             <label for="address"><spring:message code="barriers.address"/></label>
                             <input class="form-control" name="address" id="address" autocomplete="off">
                         </div>

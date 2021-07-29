@@ -15,10 +15,10 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.ray_llc.rac.model.Equipment;
 import ru.ray_llc.rac.service.EquipmentService;
-import ru.ray_llc.rac.to.EquipmentTo;
 import ru.ray_llc.rac.web.SecurityUtil;
 
 public class AbstractEquipmentController {
+
   private final Logger log = LoggerFactory.getLogger(getClass());
 
   @Autowired
@@ -60,7 +60,7 @@ public class AbstractEquipmentController {
 
   public List<Equipment> getFilter(
       @RequestParam @Nullable String ipAddress,
-      @RequestParam @Nullable String address){
+      @RequestParam @Nullable String address) {
     int userId = SecurityUtil.authUserId();
     log.info("getBetween ipAddress {},  Address {} for user {}", ipAddress, address, userId);
 

@@ -14,18 +14,13 @@
         <%--@elvariable id="userTo" type="ru.ray_llc.rac.to.UserTo"--%>
         <div class="row">
             <div class="col-5 offset-3">
-                <h3>${userTo.name} <spring:message
-                        code="${register ? 'app.register' : 'app.profile'}"/></h3>
-                <form:form class="form-group" modelAttribute="userTo" method="post"
-                           action="${register ? 'profile/register' : 'profile'}"
+                <h3>${userTo.name} <spring:message code="${register ? 'app.register' : 'app.profile'}"/></h3>
+                <form:form class="form-group" modelAttribute="userTo" method="post" action="${register ? 'profile/register' : 'profile'}"
                            charset="utf-8" accept-charset="UTF-8">
-
                     <rac:inputField labelCode="user.name" name="name"/>
                     <rac:inputField labelCode="user.login" name="login"/>
                     <rac:inputField labelCode="user.email" name="email"/>
                     <rac:inputField labelCode="user.password" name="password" inputType="password"/>
-                    <rac:inputField labelCode="user.phone" name="phone"/>
-
                     <div class="text-right">
                         <a class="btn btn-secondary" href="#" onclick="window.history.back()">
                             <span class="fa fa-close"></span>

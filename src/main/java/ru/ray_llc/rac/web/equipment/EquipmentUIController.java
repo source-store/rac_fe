@@ -31,14 +31,14 @@ public class EquipmentUIController extends AbstractEquipmentController{
 
   @Override
   @GetMapping
-//  @JsonView(View.JsonUI.class)
+  @JsonView(View.JsonUI.class)
   public List<Equipment> getAll() {
     return super.getAll();
   }
 
   @Override
   @GetMapping( "/{id}")
-//  @JsonView(View.JsonUI.class)
+  @JsonView(View.JsonUI.class)
   public Equipment get(@PathVariable int id) {
     return super.get(id);
   }
