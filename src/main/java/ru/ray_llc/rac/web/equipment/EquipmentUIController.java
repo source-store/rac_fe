@@ -64,11 +64,13 @@ public class EquipmentUIController extends AbstractEquipmentController{
     return ResponseEntity.ok().build();
   }
 
-//  @Override
-//  @GetMapping("/filter")
-//  @JsonView(View.JsonUI.class)
-//  public List<Equipment> getBetween(
-//    return null;
-//  }
+  @GetMapping("/filter")
+  @JsonView(View.JsonUI.class)
+  public List<Equipment> getFilter(
+      @RequestParam("ip_address")  @Nullable String ipAddress,
+      @RequestParam("address")  @Nullable String address){
+
+  return super.getFilter(ipAddress, address);
+  }
 
 }

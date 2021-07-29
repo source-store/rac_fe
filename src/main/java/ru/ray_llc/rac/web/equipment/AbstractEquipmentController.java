@@ -11,6 +11,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.ray_llc.rac.model.Equipment;
 import ru.ray_llc.rac.service.EquipmentService;
 import ru.ray_llc.rac.to.EquipmentTo;
@@ -55,4 +57,16 @@ public class AbstractEquipmentController {
     assureIdConsistent(equipment, id);
     service.update(equipment);
   }
+
+  public List<Equipment> getFilter(
+      @RequestParam @Nullable String ipAddress,
+      @RequestParam @Nullable String address){
+    int userId = SecurityUtil.authUserId();
+    log.info("getBetween ipAddress {},  Address {} for user {}", ipAddress, address, userId);
+
+    List<Equipment> equipmentsDateFiltered = service.getFilter(ipAddress, address);
+    return equipmentsDateFiltered;
+  }
+
+
 }

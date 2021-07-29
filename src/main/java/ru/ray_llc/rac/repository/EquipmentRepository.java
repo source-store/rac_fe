@@ -23,4 +23,5 @@ public interface EquipmentRepository {
 
   List<Equipment> getAll();
 
+  List<Equipment> getFilter(String ipAddress, String address);
 }

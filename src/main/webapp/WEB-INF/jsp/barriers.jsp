@@ -18,6 +18,10 @@
                 <form id="filter">
                     <div class="row">
                         <div class="col-2">
+                            <label for="ip_address"><spring:message code="barriers.ip_address"/></label>
+                            <input class="form-control" name="ip_address" id="ip_address" autocomplete="off">
+                        </div>
+                        <div class="col-2">
                             <label for="address"><spring:message code="barriers.address"/></label>
                             <input class="form-control" name="address" id="address" autocomplete="off">
                         </div>
@@ -43,10 +47,11 @@
         <table class="table table-striped" id="datatable">
             <thead>
             <tr>
+                <th><spring:message code="barriers.key"/></th>
                 <th><spring:message code="barriers.ip_address"/></th>
-                <th><spring:message code="barriers.name"/></th>
                 <th><spring:message code="barriers.address"/></th>
-                <th><spring:message code="barriers.state"/></th>
+                <th><spring:message code="barriers.name"/></th>
+                <th><spring:message code="barriers.description"/></th>
                 <th></th>
                 <th></th>
             </tr>

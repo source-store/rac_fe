@@ -59,4 +59,10 @@ public class EquipmentService {
     equipment.setEnabled(enabled);
     repository.save(equipment);  // !! need only for JDBC implementation
   }
+
+  public List<Equipment> getFilter(String ipAddress, String address) {
+    ipAddress = ipAddress == null ? "%%" : "%"+ipAddress+"%";
+    address = address == null ? "%%" : "%"+address+"%";
+    return repository.getFilter(ipAddress, address);
+  }
 }

@@ -1,12 +1,12 @@
-const mealAjaxUrl = "profile/barriers/";
+const barrierAjaxUrl = "profile/barriers/";
 
 // https://stackoverflow.com/a/5064235/548473
 const ctx = {
-  ajaxUrl: mealAjaxUrl,
+  ajaxUrl: barrierAjaxUrl,
   updateTable: function () {
     $.ajax({
       type: "GET",
-      url: mealAjaxUrl + "filter",
+      url: barrierAjaxUrl + "filter",
       data: $("#filter").serialize()
     }).done(updateTableByData);
   }
@@ -14,7 +14,7 @@ const ctx = {
 
 function clearFilter() {
   $("#filter")[0].reset();
-  $.get(mealAjaxUrl, updateTableByData);
+  $.get(barrierAjaxUrl, updateTableByData);
 }
 
 // http://api.jquery.com/jQuery.ajax/#using-converters
@@ -38,13 +38,19 @@ $(function () {
   makeEditable({
     "columns": [
       {
+        "data": "id"
+      },
+      {
         "data": "ip_address"
+      },
+      {
+        "data": "address"
       },
       {
         "data": "name"
       },
       {
-        "data": "address"
+        "data": "description"
       },
       {
         "render": renderEditBtn,
@@ -64,35 +70,8 @@ $(function () {
       ]
     ],
     "createdRow": function (row, data, dataIndex) {
-      $(row).attr("data-mealExcess", data.state);
+      $(row).attr("data-barrierExcess", data.state);
     }
   });
 
-//  http://xdsoft.net/jqplugins/datetimepicker/
-  var startDate = $('#startDate');
-  var endDate = $('#endDate');
-  startDate.datetimepicker({
-    timepicker: false,
-    format: 'Y-m-d',
-    formatDate: 'Y-m-d',
-    onShow: function (ct) {
-      this.setOptions({
-        maxDate: endDate.val() ? endDate.val() : false
-      })
-    }
-  });
-  endDate.datetimepicker({
-    timepicker: false,
-    format: 'Y-m-d',
-    formatDate: 'Y-m-d',
-    onShow: function (ct) {
-      this.setOptions({
-        minDate: startDate.val() ? startDate.val() : false
-      })
-    }
-  });
-
-  $('#dateTime').datetimepicker({
-    format: 'Y-m-d H:i'
-  });
 });

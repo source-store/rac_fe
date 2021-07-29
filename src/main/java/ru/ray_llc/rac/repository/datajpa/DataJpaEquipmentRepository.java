@@ -49,4 +49,9 @@ public class DataJpaEquipmentRepository implements EquipmentRepository {
   public List<Equipment> getAll() {
     return crudRepository.findAll();
   }
+
+  @Override
+  public List<Equipment> getFilter(String ipAddress, String address) {
+    return crudRepository.getFilter(ipAddress, address);
+  }
 }

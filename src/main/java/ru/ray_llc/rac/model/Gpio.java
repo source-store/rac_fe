@@ -46,7 +46,7 @@ public class Gpio extends AbstractNamedEntity {
   @NotBlank
   @Size(max = 50)
   private String action;
-  @Column(name = "parametr", nullable = false)
+  @Column(name = "parameter", nullable = false)
   @NotBlank
   @Size(max = 255)
   private String parameter;

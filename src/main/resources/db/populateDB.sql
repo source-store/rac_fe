@@ -11,3 +11,21 @@ VALUES ('User', 'user@yandex.ru', 'login1', 'password'),
 INSERT INTO user_roles (role, user_id)
 VALUES ('USER', 1000),
        ('ADMIN', 1001);
+
+INSERT INTO equipments (name, address, ip_address, longitude, latitude, description)
+VALUES('name1', 'address1', '192.168.1.2', 11.4545, 12.4453, 'description1');
+
+INSERT INTO equipments (name, address, ip_address, longitude, latitude, description)
+VALUES('name2', 'address2', '192.168.1.3', 11.4545, 12.4453, 'description2');
+
+INSERT INTO equipments (name, address, ip_address, longitude, latitude, description)
+VALUES('name3', 'address3', '192.168.1.4', 11.4545, 12.4453, 'description3');
+
+INSERT INTO equipments (name, address, ip_address, longitude, latitude, description)
+VALUES('name4', 'address4', '192.168.1.5', 11.4545, 12.4453, 'description4');
+
+INSERT INTO equipments (name, address, ip_address, longitude, latitude, description)
+VALUES('name5', 'address5', '192.168.1.6', 11.4545, 12.4453, 'description5');
+
+INSERT INTO gpio (equipments_id, name, direction, value, trigger)
+VALUES (1002, 'gpio_name', 'direction_gpio', 1, 'rising');

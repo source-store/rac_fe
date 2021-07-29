@@ -1,9 +1,9 @@
-tr[data-mealExcess="false"] {
-  color: green;
+tr[data-barrierExcess="false"] {
+  color: red;
 }
 
-tr[data-mealExcess="true"] {
-  color: red;
+tr[data-barrierExcess="true"] {
+  color: green;
 }
 
 .fa {
