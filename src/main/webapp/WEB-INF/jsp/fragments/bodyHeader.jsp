@@ -15,6 +15,7 @@
 
                 <a class="btn btn-info mr-1" href="addcase"><spring:message code="app.addcase"/></a>
                 <a class="btn btn-info mr-1" href="tracking"><spring:message code="app.tracking"/></a>
+                <a class="btn btn-info mr-1" href="barriers"><spring:message code="app.barriers"/></a>
                 <%--                <a class="btn btn-lg btn-info mt-2" href="profile/register"><spring:message code="app.register"/> &raquo;</a>--%>
 
                 <a class="btn btn-info mr-1" href="profile">${userTo.name} <spring:message code="app.profile"/></a>

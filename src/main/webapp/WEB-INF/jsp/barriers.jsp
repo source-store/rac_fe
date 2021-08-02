@@ -11,10 +11,10 @@
 
 <div class="jumbotron pt-4">
     <div class="container">
-        <h3 class="text-center"><spring:message code="barriers.title"/></h3>
+        <h4 class="text-center"><spring:message code="barriers.title"/></h4>
         <%--https://getbootstrap.com/docs/4.0/components/card/--%>
         <div class="card border-dark">
-            <div class="card-body pb-0">
+            <div class="card-body px-3">
                 <form id="filter">
                     <div class="row">
                         <div class="col-md-2">
@@ -29,25 +29,24 @@
                 </form>
             </div>
             <div class="card-footer text-right">
-                <button class="btn btn-danger" onclick="clearFilter()">
+                <button class="btn btn-outline-danger" onclick="clearFilter()">
                     <span class="fa fa-remove"></span>
                     <spring:message code="common.cancel"/>
                 </button>
-                <button class="btn btn-primary" onclick="ctx.updateTable()">
+                <button class="btn btn-outline-primary" onclick="ctx.updateTable()">
                     <span class="fa fa-filter"></span>
                     <spring:message code="barriers.filter"/>
                 </button>
             </div>
         </div>
         <br/>
-        <button class="btn btn-primary" onclick="add()">
+        <button class="btn btn-outline-primary" onclick="add()">
             <span class="fa fa-plus"></span>
             <spring:message code="common.add"/>
         </button>
-        <table class="table table-striped" id="datatable">
+        <table class="table table-hover " id="datatable">
             <thead>
             <tr>
-                <th><spring:message code="barriers.key"/></th>
                 <th><spring:message code="barriers.ip_address"/></th>
                 <th><spring:message code="barriers.address"/></th>
                 <th><spring:message code="barriers.name"/></th>

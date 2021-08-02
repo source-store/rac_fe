@@ -17,7 +17,7 @@ import ru.ray_llc.rac.model.Equipment;
 import ru.ray_llc.rac.service.EquipmentService;
 import ru.ray_llc.rac.web.SecurityUtil;
 
-public class AbstractEquipmentController {
+public abstract class AbstractEquipmentController {
 
   private final Logger log = LoggerFactory.getLogger(getClass());
 

@@ -28,4 +28,9 @@ public class RootController {
   public String getBarriers() {
     return "barriers";
   }
+
+  @GetMapping("/addcase")
+  public String getAddcase() {
+    return "addcase";
+  }
 }

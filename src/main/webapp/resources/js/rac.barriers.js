@@ -38,9 +38,6 @@ $(function () {
   makeEditable({
     "columns": [
       {
-        "data": "id"
-      },
-      {
         "data": "ip_address"
       },
       {
