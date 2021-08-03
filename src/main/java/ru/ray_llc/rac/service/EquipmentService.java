@@ -16,6 +16,7 @@ import ru.ray_llc.rac.model.Equipment;
 import ru.ray_llc.rac.repository.EquipmentRepository;
 
 @Service
+@Transactional(readOnly = true)
 public class EquipmentService {
 
   private final EquipmentRepository repository;
@@ -59,7 +60,7 @@ public class EquipmentService {
   public void enable(int id, boolean enabled) {
     Equipment equipment = get(id);
     equipment.setEnabled(enabled);
-    repository.save(equipment);  // !! need only for JDBC implementation
+    repository.save(equipment);
   }
 
   public List<Equipment> getFilter(String ipAddress, String address) {

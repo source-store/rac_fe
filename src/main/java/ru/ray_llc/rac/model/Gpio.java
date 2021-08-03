@@ -34,14 +34,17 @@ public class Gpio extends AbstractNamedEntity {
   @JsonBackReference
   @NotNull
   private Equipment equipment;
+
   @Column(name = "direction", nullable = false)
   @NotBlank
   @Size(max = 50)
   private String direction;
+
   @Column(name = "trigger", nullable = false)
   @NotBlank
   @Size(max = 50)
   private String trigger;
+
   @Column(name = "action", nullable = false)
   @NotBlank
   @Size(max = 50)
