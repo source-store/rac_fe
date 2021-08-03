@@ -6,17 +6,13 @@
 <html>
 <jsp:include page="fragments/headTag.jsp"/>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/suggestions.css" />
 
     <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     <script src="resources/js/jquery.suggestions.js"></script>
     <script src="resources/js/token.js"></script>
     <script src="resources/js/code.js"></script>
-
-    <title>Title</title>
-
-
 </head>
 <body>
 <jsp:include page="fragments/bodyHeader.jsp"/>

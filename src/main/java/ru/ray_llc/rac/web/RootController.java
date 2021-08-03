@@ -33,4 +33,14 @@ public class RootController {
   public String getAddcase() {
     return "addcase";
   }
+
+  @GetMapping("/tasks")
+  public String getTasks() {
+    return "tasks";
+  }
+
+  @GetMapping("/map")
+  public String getMap() {
+    return "map";
+  }
 }

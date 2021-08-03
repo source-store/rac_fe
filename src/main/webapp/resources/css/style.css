@@ -6,6 +6,14 @@ tr[data-barrierExcess="true"] {
   color: green;
 }
 
+tr[data-taskExcess="false"] {
+  color: red;
+}
+
+tr[data-taskExcess="true"] {
+  color: green;
+}
+
 .fa {
   cursor: pointer;
 }
