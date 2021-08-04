@@ -55,6 +55,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="login" class="col-form-label"><spring:message code="user.login"/></label>
+                        <input type="text" class="form-control" id="login" name="login"
+                               placeholder="<spring:message code="user.login"/>">
+                    </div>
+
+                    <div class="form-group">
                         <label for="email" class="col-form-label"><spring:message
                                 code="user.email"/></label>
                         <input type="email" class="form-control" id="email" name="email"

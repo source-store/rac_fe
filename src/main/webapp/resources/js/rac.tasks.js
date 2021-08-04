@@ -47,7 +47,13 @@ $(function () {
         "data": "phone"
       },
       {
-        "data": "registered"
+        "data": "registered",
+        "render": function (date, type, row) {
+          if (type === "display") {
+            return date.substring(0, 19).replace("T", " ");
+          }
+          return date;
+        }
       }
     ],
     "order": [

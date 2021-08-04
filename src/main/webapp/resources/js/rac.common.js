@@ -63,6 +63,7 @@ function updateTableByData(data) {
 }
 
 function save() {
+  debugger;
   $.ajax({
     type: "POST",
     url: ctx.ajaxUrl,

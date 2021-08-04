@@ -1,5 +1,6 @@
 package ru.ray_llc.rac.web;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,11 +10,11 @@ public class RootController {
 
   @GetMapping("/")
   public String root() {
-    return "barriers";
+    return "tasks";
   }
 
-//    @Secured("ROLE_ADMIN")
-//  @PreAuthorize("hasRole('ADMIN')")
+  @Secured("ROLE_ADMIN")
+  @PreAuthorize("hasRole('ADMIN')")
   @GetMapping("/users")
   public String getUsers() {
     return "users";

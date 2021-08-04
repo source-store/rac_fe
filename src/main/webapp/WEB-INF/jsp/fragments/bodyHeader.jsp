@@ -12,8 +12,9 @@
                 <sec:authorize access="hasRole('ADMIN')">
                     <a class="btn btn-info mr-1" href="users"><spring:message code="user.title"/></a>
                 </sec:authorize>
-
-                <a class="btn btn-info mr-1" href="addcase"><spring:message code="app.addcase"/></a>
+                <sec:authorize access="hasRole('USER')">
+                    <a class="btn btn-info mr-1" href="addcase"><spring:message code="app.addcase"/></a>
+                </sec:authorize>
                 <a class="btn btn-info mr-1" href="tasks"><spring:message code="app.task"/></a>
                 <a class="btn btn-info mr-1" href="barriers"><spring:message code="app.barriers"/></a>
                 <a class="btn btn-info mr-1" href="map"><spring:message code="app.map"/></a>
