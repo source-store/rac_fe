@@ -1,18 +1,7 @@
 let form;
 
-function makeEditable(datatableOpts) {
-  ctx.datatableApi = $("#datatable").DataTable(
-      // https://api.jquery.com/jquery.extend/#jQuery-extend-deep-target-object1-objectN
-      $.extend(true, datatableOpts,
-          {
-            "ajax": {
-              "url": ctx.ajaxUrl,
-              "dataSrc": ""
-            },
-            "paging": false,
-            "info": true
-          }
-      ));
+function makeEditable(datatableApi) {
+  ctx.datatableApi = datatableApi;
 
   form = $('#detailsForm');
   $(document).ajaxError(function (event, jqXHR, options, jsExc) {
@@ -21,12 +10,6 @@ function makeEditable(datatableOpts) {
 
   // solve problem with cache in IE: https://stackoverflow.com/a/4303862/548473
   $.ajaxSetup({cache: false});
-
-  var token = $("meta[name='_csrf']").attr("content");
-  var header = $("meta[name='_csrf_header']").attr("content");
-  $(document).ajaxSend(function (e, xhr, options) {
-    xhr.setRequestHeader(header, token);
-  });
 }
 
 function add() {
@@ -59,16 +42,16 @@ function deleteRow(id) {
 }
 
 function updateTableByData(data) {
+  debugger;
   ctx.datatableApi.clear().rows.add(data).draw();
 }
 
 function save() {
-  debugger;
+  const form = $("#detailsForm");
   $.ajax({
     type: "POST",
     url: ctx.ajaxUrl,
-    data: form.serialize(),
-    dataType: "json",
+    data: form.serialize()
   }).done(function () {
     $("#editRow").modal("hide");
     ctx.updateTable();
@@ -97,14 +80,11 @@ function successNoty(key) {
 
 function failNoty(jqXHR) {
   closeNoty();
-  var errorInfo = jqXHR.responseText;
   failedNote = new Noty({
-    text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + i18n["common.errorStatus"] + ": " + jqXHR.status +
-        "<br>" + errorInfo.type + "<br>" + errorInfo.detail,
+    text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + i18n["common.errorStatus"] + ": " + jqXHR.status + (jqXHR.responseJSON ? "<br>" + jqXHR.responseJSON : ""),
     type: "error",
     layout: "bottomRight"
-  });
-  failedNote.show();
+  }).show();
 }
 
 function renderEditBtn(data, type, row) {

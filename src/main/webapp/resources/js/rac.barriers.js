@@ -35,8 +35,15 @@ $.ajaxSetup({
 });
 
 $(function () {
-  makeEditable({
-    "columns": [
+  makeEditable(
+      $("#datatable").DataTable({
+        "ajax": {
+          "url": barrierAjaxUrl,
+          "dataSrc": ""
+        },
+        "paging": false,
+        "info": true,
+        "columns": [
       {
         "data": "ip_address"
       },
@@ -69,6 +76,6 @@ $(function () {
     "createdRow": function (row, data, dataIndex) {
       $(row).attr("data-barrierExcess", data.state);
     }
-  });
-
+  })
+  );
 });

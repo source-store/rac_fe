@@ -1,6 +1,7 @@
 const userAjaxUrl = "admin/users/";
 
 // https://stackoverflow.com/a/5064235/548473
+debugger;
 const ctx = {
   ajaxUrl: userAjaxUrl,
   updateTable: function () {
@@ -26,8 +27,15 @@ function enable(chkbox, id) {
 
 // $(document).ready(function () {
 $(function () {
-  makeEditable({
-    "columns": [
+  makeEditable(
+      $("#datatable").DataTable({
+        "ajax": {
+          "url": userAjaxUrl,
+          "dataSrc": ""
+        },
+        "paging": false,
+        "info": true,
+        "columns": [
       {
         "data": "name"
       },
@@ -42,6 +50,9 @@ $(function () {
       },
       {
         "data": "roles"
+      },
+      {
+        "data": "login"
       },
       {
         "data": "enabled",
@@ -84,5 +95,6 @@ $(function () {
         $(row).attr("data-userEnabled", false);
       }
     }
-  });
+  })
+ );
 });

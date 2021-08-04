@@ -21,6 +21,7 @@ import ru.ray_llc.rac.repository.UserRepository;
 import ru.ray_llc.rac.to.UserTo;
 import ru.ray_llc.rac.util.UserUtil;
 
+@Transactional(readOnly = true)
 @Service("userService")
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserService implements UserDetailsService {
@@ -33,12 +34,14 @@ public class UserService implements UserDetailsService {
     this.passwordEncoder = passwordEncoder;
   }
 
+  @Transactional
   @CacheEvict(value = "users", allEntries = true)
   public User create(User user) {
     Assert.notNull(user, "user must not be null");
     return prepareAndSave(user);
   }
 
+  @Transactional
   @CacheEvict(value = "users", allEntries = true)
   public void delete(int id) {
     checkNotFoundWithId(repository.delete(id), id);
@@ -58,6 +61,7 @@ public class UserService implements UserDetailsService {
     return repository.getAll();
   }
 
+  @Transactional
   @CacheEvict(value = "users", allEntries = true)
   public void update(User user) {
     Assert.notNull(user, "user must not be null");

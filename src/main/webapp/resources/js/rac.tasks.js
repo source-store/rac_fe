@@ -35,7 +35,14 @@ $.ajaxSetup({
 });
 
 $(function () {
-  makeEditable({
+  makeEditable(
+      $("#datatable").DataTable({
+    "ajax": {
+      "url": taskAjaxUrl,
+      "dataSrc": ""
+    },
+    "paging": false,
+    "info": true,
     "columns": [
       {
         "data": "address"
@@ -65,6 +72,6 @@ $(function () {
     "createdRow": function (row, data, dataIndex) {
       $(row).attr("data-taskExcess", data.state);
     }
-  });
-
+  })
+);
 });
